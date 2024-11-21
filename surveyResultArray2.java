@@ -13,15 +13,14 @@ public class surveyResultArray2 {
             }
         }
         System.out.println();
-        System.out.println("Average value per Responden: ");
+        System.out.println("Overall Average value: ");
             for (int j = 0; j < 10; j++) {
-            System.out.println("Responden " + (j+1));
-            int sum = 0;
+            int totalSum = 0;
                 for (int j2 = 0; j2 < 6; j2++) {
-                sum += surveyData[j][j2];
+                totalSum += surveyData[j][j2];
                 }
-                double averageValue = (double) sum / 6;
-                System.out.println("Average value " + averageValue);
+                double overallAverage = (double) totalSum / (10*6);
+                System.out.print("\n" + overallAverage + " ");
             }
     }
 }
