@@ -25,14 +25,18 @@ public class CinemaWithScanner17 {
                     column = input.nextInt();
                     input.nextLine();
         
-                    audience[row-1][column-1]=name;
+                    if (row >= 1 && row <= 4 && column >=1 && column <= 2) {
+                        audience[row-1][column-1]=name;
+                    
+                    } else {
+                        System.out.println("Number is not available.");
+                    }
+                    
                     System.out.print("Are there any other audiences to be added? (y/n): ");
                     next = input.nextLine();
-        
                     if (next.equalsIgnoreCase("n")) {
                         break;
                     }
-                    
                 }
             }
             else if (menuAudience == 2) {
@@ -44,22 +48,10 @@ public class CinemaWithScanner17 {
                         }
                     }
                 }
-                
-
             }
             else if (menuAudience == 3) {
                 break;
             }
         }
-            
-
-            
-        
-        
-           
-        
-        
-
-        
     }
 }
