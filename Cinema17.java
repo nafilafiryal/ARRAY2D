@@ -22,5 +22,10 @@ public class Cinema17 {
         System.out.printf("%s \t %s \n", audience[1][0], audience[1][1]);
         System.out.printf("%s \t %s \n", audience[2][0], audience[2][1]);
         System.out.printf("%s \t %s \n", audience[3][0], audience[3][1]);
+
+        System.out.println("Audience in the row 3: ");
+        for (int i = 0; i < audience[2].length; i++) {
+            System.out.println(audience[2][i]);
+        }
     }
 }
