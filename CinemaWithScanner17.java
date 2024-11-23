@@ -19,19 +19,23 @@ public class CinemaWithScanner17 {
                 while (true) {
                     System.out.print("Enter a name: ");
                     name = input.nextLine();
-                    System.out.print("Enter row number: ");
-                    row = input.nextInt();
-                    System.out.print("Enter column number: ");
-                    column = input.nextInt();
-                    input.nextLine();
-        
-                    if (row >= 1 && row <= 4 && column >=1 && column <= 2) {
-                        audience[row-1][column-1]=name;
-                    
-                    } else {
-                        System.out.println("Number is not available.");
+
+                    while (true) {
+                        System.out.print("Enter row number: ");
+                        row = input.nextInt();
+                        System.out.print("Enter column number: ");
+                        column = input.nextInt();
+                        input.nextLine();
+
+                        if (audience[row-1][column-1] != null) {
+                            System.out.println("Warning: The seat at Row " + row + ", Column "+ column + " is already occupied ");
+                            System.out.println("Please choose a different seat.");
+                        
+                        } else {
+                            audience[row-1][column-1]=name;
+                            break;
+                        }
                     }
-                    
                     System.out.print("Are there any other audiences to be added? (y/n): ");
                     next = input.nextLine();
                     if (next.equalsIgnoreCase("n")) {
@@ -43,9 +47,11 @@ public class CinemaWithScanner17 {
                 System.out.println("\nAudience List: ");
                 for (int j = 0; j < 4; j++) {
                     for (int j2 = 0; j2 < 2; j2++) {
-                        if (audience[j][j2] != null) {
-                            System.out.println("Row " + (j+1) + ", Column " + (j2+1) + ": " + audience[j][j2]);
+                        String seat = audience[j][j2];
+                        if (seat==null) {
+                            seat="***";
                         }
+                        System.out.println("Row " + (j+1) + ", Column " + (j2+1) + ": " + seat);
                     }
                 }
             }
